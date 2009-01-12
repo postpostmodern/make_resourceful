@@ -89,6 +89,7 @@ module Resourceful
         #load_object
         before :destroy
         if current_object.destroy
+          save_succeeded!
           after :destroy
           response_for :destroy
         else
